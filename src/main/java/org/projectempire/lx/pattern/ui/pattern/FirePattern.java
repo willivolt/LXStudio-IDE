@@ -20,13 +20,15 @@ public class FirePattern extends LXPattern {
     protected int[] fireColors = new int[100];
     protected int[][] fireIndexes = new int[7][360];
 
+    private double waitMs = 0d;
+
     protected  FirePattern(LX lx, int color) {
         super(lx);
         this.color.setColor(color);
         addParameter("color", this.color);
         addParameter(burndown.getLabel(), burndown);
-        for (int i = 0; i < fireIndexes.length; i++) {
-            Arrays.fill(fireIndexes[i], 0);
+        for (int[] fireIndex : fireIndexes) {
+            Arrays.fill(fireIndex, 0);
         }
         Arrays.fill(fireColors, LXColor.BLACK);
         setColorLookup();
@@ -34,6 +36,14 @@ public class FirePattern extends LXPattern {
 
     public FirePattern(LX lx) {
         this(lx, LXColor.RED);
+    }
+
+    @Override
+    public void onActive() {
+        super.onActive();
+        for (int[] fireIndex : fireIndexes) {
+            Arrays.fill(fireIndex, 0);
+        };
     }
 
     @Override
@@ -295,6 +305,13 @@ public class FirePattern extends LXPattern {
 
     @Override
     protected void run(double deltaMs) {
+        waitMs += deltaMs;
+        if (waitMs < (1000.0/15.0)) {
+            // 15 fps
+            return;
+        }
+        waitMs = 0;
+
         Set<Integer> hVals = new TreeSet<>();
         final int h = fireIndexes.length;
         final int w = 360;
@@ -315,7 +332,7 @@ public class FirePattern extends LXPattern {
         }
         for (LXPoint p: model.points) {
             int z = LXUtils.lerpi(0, h-2, p.zn);
-            int x = (int)Math.toDegrees(p.theta);
+            int x = (int)Math.toDegrees(p.theta)/2;
             colors[p.index] = fireColors[fireIndexes[z][x]];
             hVals.add(z);
         }
