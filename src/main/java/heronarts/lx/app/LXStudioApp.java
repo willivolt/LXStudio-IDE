@@ -18,12 +18,12 @@
 
 package heronarts.lx.app;
 
-import java.io.File;
-
 import heronarts.lx.LX;
 import heronarts.lx.LXPlugin;
 import heronarts.lx.studio.LXStudio;
 import processing.core.PApplet;
+
+import java.io.File;
 
 /**
  * This is an example top-level class to build and run an LX Studio
@@ -81,6 +81,7 @@ public class LXStudioApp extends PApplet implements LXPlugin {
     lx.registry.addPattern(org.projectempire.lx.pattern.ui.pattern.RingPattern.class);
     lx.registry.addPattern(org.projectempire.lx.pattern.ui.pattern.FirePattern.class);
     lx.registry.addEffect(heronarts.lx.app.effect.AppEffect.class);
+    lx.registry.addFixture(org.projectempire.lx.structure.ButtBottomFixture.class);
   }
 
   public void initializeUI(LXStudio lx, LXStudio.UI ui) {
