@@ -1,6 +1,6 @@
 {
   "version": "0.4.0",
-  "timestamp": 1682294234625,
+  "timestamp": 1682801146497,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -2130,8 +2130,7 @@
           "kinetPort": 1,
           "numPoints": 168,
           "width": 66.0,
-          "height": 24.0,
-          "buttMode": 0
+          "height": 24.0
         },
         "children": {}
       },
@@ -2172,8 +2171,7 @@
           "kinetPort": 1,
           "numPoints": 170,
           "width": 66.0,
-          "height": 25.0,
-          "buttMode": 0
+          "height": 25.0
         },
         "children": {}
       },
@@ -2214,8 +2212,7 @@
           "kinetPort": 1,
           "numPoints": 139,
           "width": 60.0,
-          "height": 19.0,
-          "buttMode": 0
+          "height": 19.0
         },
         "children": {}
       },
@@ -2256,8 +2253,7 @@
           "kinetPort": 1,
           "numPoints": 99,
           "width": 49.0,
-          "height": 13.0,
-          "buttMode": 0
+          "height": 13.0
         },
         "children": {}
       },
@@ -2298,8 +2294,7 @@
           "kinetPort": 1,
           "numPoints": 63,
           "width": 34.0,
-          "height": 6.0,
-          "buttMode": 0
+          "height": 6.0
         },
         "children": {}
       },
@@ -2340,8 +2335,7 @@
           "kinetPort": 1,
           "numPoints": 136,
           "width": 64.75,
-          "height": 20.5,
-          "buttMode": 0
+          "height": 20.5
         },
         "children": {}
       },
@@ -2382,8 +2376,7 @@
           "kinetPort": 1,
           "numPoints": 136,
           "width": 63.75,
-          "height": 22.5,
-          "buttMode": 0
+          "height": 22.5
         },
         "children": {}
       },
@@ -2424,8 +2417,7 @@
           "kinetPort": 1,
           "numPoints": 139,
           "width": 57.75,
-          "height": 23.0,
-          "buttMode": 0
+          "height": 23.0
         },
         "children": {}
       },
@@ -2466,8 +2458,7 @@
           "kinetPort": 1,
           "numPoints": 124,
           "width": 47.5,
-          "height": 24.0,
-          "buttMode": 0
+          "height": 24.5
         },
         "children": {}
       },
@@ -2508,8 +2499,7 @@
           "kinetPort": 1,
           "numPoints": 116,
           "width": 34.5,
-          "height": 16.0,
-          "buttMode": 1
+          "height": 26.0
         },
         "children": {}
       }
@@ -7563,9 +7553,9 @@
         "centerPoint": false,
         "camera": {
           "active": false,
-          "radius": 283.79552844677636,
-          "theta": 126.81389591889456,
-          "phi": 0.1144818002358079,
+          "radius": 229.4239129159615,
+          "theta": 121.55838393280283,
+          "phi": 0.423316303640604,
           "x": 2.8903954215347767,
           "y": 16.070792719721794,
           "z": 154.17460510507226
@@ -7573,9 +7563,9 @@
         "cue": [
           {
             "active": false,
-            "radius": 283.79552844677636,
-            "theta": 126.81389591889456,
-            "phi": 0.1144818002358079,
+            "radius": 229.4239129159615,
+            "theta": 121.55838393280283,
+            "phi": 0.423316303640604,
             "x": 2.8903954215347767,
             "y": 16.070792719721794,
             "z": 154.17460510507226
