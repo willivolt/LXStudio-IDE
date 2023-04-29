@@ -65,7 +65,6 @@ public class ButtBottomFixture extends LXBasicFixture implements UIFixtureContro
             // First 1/4 circle
             float rotation = LX.HALF_PIf / firstCurvePoints;
             // TODO: can we figure out how much unused curve there is?
-            LX.log(String.format("Transform Start 1: %f, %f", transform.x(), transform.y()));
             for (LXPoint p : points.subList(0, firstCurvePoints)) {
                 p.set(transform);
                 transform.translateX(radius);
@@ -78,7 +77,6 @@ public class ButtBottomFixture extends LXBasicFixture implements UIFixtureContro
             transform.push(); // Save origin again
             transform.translateX(radius);
             transform.translateY(-radius);
-            LX.log(String.format("Transform Start 2: %f, %f", transform.x(), transform.y()));
             if (firstCurvePoints < firstCurvePoints + linePoints) {
                 for (LXPoint p : points.subList(firstCurvePoints, firstCurvePoints + linePoints)) {
                     p.set(transform);
@@ -90,7 +88,6 @@ public class ButtBottomFixture extends LXBasicFixture implements UIFixtureContro
             transform.translateX(radius + lineLength);
             transform.translateY(-radius);
             rotation = LX.HALF_PIf / secondCurvePoints;
-            LX.log(String.format("Transform Start 3: %f, %f", transform.x(), transform.y()));
             for (LXPoint p : points.subList(firstCurvePoints + linePoints, this.numPoints.getValuei())) {
                 p.set(transform);
                 transform.translateY(radius);
@@ -100,7 +97,7 @@ public class ButtBottomFixture extends LXBasicFixture implements UIFixtureContro
         } else {
             final float radius = this.width.getValuef() / 2f;
             final float rotation = (LX.PIf / (this.points.size() - 1));
-            final float step = (this.height.getValuef() - radius) / (this.points.size() - 1);
+            final float step = (this.height.getValuef() - radius) / (this.points.size() / 2f);
             float currentRotation = 0;
             float totalStep = radius;
             transform.rotateZ(-LX.HALF_PIf); // Rotate 90 to start angle
