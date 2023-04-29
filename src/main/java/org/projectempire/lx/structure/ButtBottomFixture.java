@@ -75,7 +75,7 @@ public class ButtBottomFixture extends LXBasicFixture implements UIFixtureContro
             // Line segment
             // Unlikely that spacing on the line segment will be exact, so move to start of line
             transform.pop(); // Return to origin
-            transform.push(); // Save again
+            transform.push(); // Save origin again
             transform.translateX(radius);
             transform.translateY(-radius);
             LX.log(String.format("Transform Start 2: %f, %f", transform.x(), transform.y()));
@@ -101,18 +101,18 @@ public class ButtBottomFixture extends LXBasicFixture implements UIFixtureContro
             final float radius = this.width.getValuef() / 2f;
             final float rotation = (LX.PIf / (this.points.size() - 1));
             final float step = (this.height.getValuef() - radius) / (this.points.size() - 1);
-            float totalRotation = 0;
+            float currentRotation = 0;
             float totalStep = radius;
-            transform.rotateZ(-LX.HALF_PIf);
+            transform.rotateZ(-LX.HALF_PIf); // Rotate 90 to start angle
             for (LXPoint p : this.points) {
-                transform.translateY(-totalStep);
-                p.set(transform);
-                transform.translateY(totalStep);
-                transform.rotateZ(rotation);
-                totalRotation += rotation;
-                // for the first half, points are getting further from the center. for the second half, they are
-                // getting closer
-                if (totalRotation < LX.HALF_PIf) {
+                transform.translateY(-totalStep); // Shift to edge
+                p.set(transform); // Set point
+                transform.translateY(totalStep); // Shift back to center
+                transform.rotateZ(rotation); // Rotate to next point
+                currentRotation += rotation;
+                // for the first half, points are getting further from the center. for the second half, points are
+                // getting closer to center.
+                if (currentRotation < LX.HALF_PIf) {
                     totalStep += step;
                 } else {
                     totalStep -= step;
