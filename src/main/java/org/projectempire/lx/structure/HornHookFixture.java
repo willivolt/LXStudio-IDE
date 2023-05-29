@@ -67,27 +67,76 @@ public class HornHookFixture extends LXBasicFixture implements UIFixtureControls
         LXTransform transform = new LXTransform(matrix);
         final float radius = this.radius.getValuef();
         final float circumference = LX.TWO_PIf * radius;
-        final float arcLength = circumference * (degrees.getValuef() / 360f);
-        //final float rotation = arcLength / SPACING;  // TODO: this isn't right
-        // todo move back to start of horn and offset
-        int pointCount = points1.getValuei();
+        final float rotation = LX.TWO_PIf * (SPACING / circumference);
+        int startIndex = 0; // inclusive
+        int endIndex = 0; // exclusive
         int linePointCount = (int) (length.getValuef() / SPACING);
-        int curvePoints = pointCount - linePointCount;
-        float rotation = (float) Math.toRadians(degrees.getValuef()) / (curvePoints);
-        LX.log("radius: " + radius + " circumference: " + circumference + " arcLength: " + arcLength + " rotation: " + rotation + " linePointCount: " + linePointCount);
-        int i = 0;
-        for (i = 0; i < linePointCount - 1; ++i) {
-            // do the straight part of the horn
-            points.get(i).set(transform);
-            transform.translateX(SPACING);
+        for (int segment = 1; segment < 5; ++segment) {
+            transform.push();
+            LX.log(transform.vector().toString());
+            switch (segment) {
+                case 1:
+                    startIndex = 0;
+                    endIndex = points1.getValuei();
+                    transform.translateY(0.5f);
+                    break;
+                case 2:
+                    startIndex += points1.getValuei();
+                    endIndex += points2.getValuei();
+                    transform.translateY(-0.5f);
+                    break;
+                case 3:
+                    startIndex += points2.getValuei();
+                    endIndex += points3.getValuei();
+                    transform.translateZ(0.5f);
+                    break;
+                case 4:
+                    startIndex += points3.getValuei();
+                    endIndex += points4.getValuei();
+                    transform.translateZ(-0.5f);
+                    break;
+            }
+            int i;
+            for (i = startIndex; i < linePointCount + startIndex - 1; ++i) {
+                // do the straight part of the horn
+                points.get(getPixelIndex(i)).set(transform);
+                transform.translateX(SPACING);
+            }
+            for (; i < endIndex; ++i) {
+                // do the curved part of the horn
+                points.get(getPixelIndex(i)).set(transform);
+                transform.translateZ(radius);
+                transform.rotateY(-rotation);
+                transform.translateZ(-radius);
+            }
+            transform.pop();
         }
-        for (; i < pointCount; ++i) {
-            // do the curved part of the horn
-            points.get(i).set(transform);
-            transform.translateY(radius);
-            transform.rotateZ(rotation);
-            transform.translateY(-radius);
+    }
+
+    private int getPixelIndex(int pixelNum) {
+        final int segment1Start = 0;
+        final int segment1End = points1.getValuei() - 1;
+        final int segment2Start = segment1End + 1;
+        final int segment2End = segment1End + points2.getValuei();
+        final int segment3Start = segment2End + 1;
+        final int segment3End = segment2End + points3.getValuei();
+        final int segment4Start = segment3End + 1;
+        final int segment4End = segment3End + points4.getValuei();
+
+        // Every other segment is reverse order:
+        // 0 1 2 3 4 | 5 6 7 8 9 | 10 11 12 13 14 | 15 16 17 18 19
+        // 0 1 2 3 4 | 9 8 7 6 5 | 10 11 12 13 14 | 19 18 17 16 15
+        int result = -1;
+        if (pixelNum <= segment1End) {
+            result = pixelNum;
+        } else if (pixelNum <= segment2End) {
+            result = segment2Start + segment2End - pixelNum;
+        } else if (pixelNum <= segment3End) {
+            result = pixelNum;
+        } else if (pixelNum <= segment4End) {
+            result = segment4Start + segment4End - pixelNum;
         }
+        return result;
     }
 
     @Override
@@ -115,8 +164,7 @@ public class HornHookFixture extends LXBasicFixture implements UIFixtureControls
     public void buildFixtureControls(LXStudio.UI ui, UIFixture uiFixture, HornHookFixture hornHookFixture) {
         uiFixture.addTagSection();
         uiFixture.addGeometrySection();
-        // TODO: add a section for each LED string
-        uiFixture.addSection(" Horn Hook", new UI2dComponent[][]{
+        uiFixture.addSection("Horn Hook", new UI2dComponent[][]{
                 {uiFixture.newControlIntBox(hornHookFixture.points1, CONTROL_WIDTH),
                         uiFixture.newControlIntBox(hornHookFixture.points2, CONTROL_WIDTH),
                         uiFixture.newControlIntBox(hornHookFixture.points3, CONTROL_WIDTH),
@@ -141,17 +189,5 @@ public class HornHookFixture extends LXBasicFixture implements UIFixtureControls
                 }
         });
         uiFixture.addProtocolSection(hornHookFixture, false);
-
-//        uiFixture.addSection("Grid",
-//                new UI2dComponent[][]{
-//                        {uiFixture.newParameterLabel("Position", 64.0F),
-//                                uiFixture.newControlButton(grid.positionMode, 104.0F)},
-//                        {uiFixture.newParameterLabel("Rows", 64.0F),
-//                                uiFixture.newControlIntBox(grid.numRows, 51.0F),
-//                                uiFixture.newControlBox(grid.rowSpacing, 51.0F)},
-//                        {uiFixture.newParameterLabel("Columns", 64.0F),
-//                                uiFixture.newControlIntBox(grid.numColumns, 51.0F),
-//                                uiFixture.newControlBox(grid.columnSpacing, 51.0F)}});
-//
     }
 }
