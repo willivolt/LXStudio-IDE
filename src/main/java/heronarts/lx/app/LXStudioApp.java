@@ -83,6 +83,7 @@ public class LXStudioApp extends PApplet implements LXPlugin {
     lx.registry.addEffect(heronarts.lx.app.effect.AppEffect.class);
     lx.registry.addFixture(org.projectempire.lx.structure.ButtBottomFixture.class);
     lx.registry.addFixture(org.projectempire.lx.structure.HornHookFixture.class);
+    lx.registry.addFixture(org.projectempire.lx.structure.HornSFixture.class);
   }
 
   public void initializeUI(LXStudio lx, LXStudio.UI ui) {

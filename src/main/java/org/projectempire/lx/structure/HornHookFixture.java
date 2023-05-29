@@ -73,7 +73,6 @@ public class HornHookFixture extends LXBasicFixture implements UIFixtureControls
         int linePointCount = (int) (length.getValuef() / SPACING);
         for (int segment = 1; segment < 5; ++segment) {
             transform.push();
-            LX.log(transform.vector().toString());
             switch (segment) {
                 case 1:
                     startIndex = 0;
