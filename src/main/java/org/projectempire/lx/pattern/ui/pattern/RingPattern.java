@@ -16,6 +16,9 @@ import heronarts.lx.parameter.LXParameter;
 import heronarts.lx.pattern.LXPattern;
 import heronarts.lx.utils.LXUtils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @LXCategory("Nozzle")
 public class RingPattern extends LXPattern {
     public enum ColorMode {
@@ -83,7 +86,9 @@ public class RingPattern extends LXPattern {
         int sign = 1;
         float offset = (float) (rot * (Math.PI / 180));
         // TODO: access points through model.children of model.childDict so we know which ring we are in
-        for (LXModel model : this.model.children("nozzle")) {
+        List<LXModel> models = new ArrayList<>(this.model.children("nozzle"));
+        models.addAll(this.model.children("neo"));
+        for (LXModel model : models) {
             for (LXPoint p : model.points) {
                 //int band = (int)(p.zn / (1f / (float)(NUM_BANDS - 1)));
                 //int sign = (band % 2 == 0) ? -1 : 1;
