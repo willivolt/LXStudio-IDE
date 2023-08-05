@@ -2453,7 +2453,7 @@
           "identify": false,
           "mute": false,
           "solo": false,
-          "tags": "strip",
+          "tags": "strip sub bubble",
           "protocol": 1,
           "byteOrder": 0,
           "transport": 0,
