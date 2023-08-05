@@ -6,7 +6,6 @@ import heronarts.lx.color.LXColor;
 import heronarts.lx.effect.LXEffect;
 import heronarts.lx.model.LXPoint;
 import heronarts.lx.modulator.SawLFO;
-import heronarts.lx.utils.LXUtils;
 
 @LXCategory("Empire")
 public class PulseEffect extends LXEffect {
@@ -22,13 +21,10 @@ public class PulseEffect extends LXEffect {
         final float patternOffset = this.offset.getValuef();
         for (LXPoint p: this.model.points) {
             int i = p.index;
-            float radians = patternOffset + (p.rcn * LX.TWO_PIf);
-            float b = ((LXUtils.sinf(radians) + 1f)/ 2f) * 100f;
+            float radians = patternOffset + (p.zn * LX.TWO_PIf / 4f);
+            float b = (((float)Math.sin(radians) + 1f)/ 2f) * 100f;
             this.colors[i] = LXColor.multiply(this.colors[i],
-                    LXColor.gray(b), 256);
-            if (i % 500 == 0) {
-                LX.log("i: " + i + ", b: " + b + ", offset: " + offset + ", rcn: " + p.rcn);
-            }
+                    LXColor.gray(100 - b), 256);
         }
     }
 }
