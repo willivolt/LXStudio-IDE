@@ -22,6 +22,7 @@ import heronarts.lx.LX;
 import heronarts.lx.LXPlugin;
 import heronarts.lx.studio.LXStudio;
 import org.projectempire.lx.effect.BreatheEffect;
+import org.projectempire.lx.effect.PulseEffect;
 import processing.core.PApplet;
 
 import java.io.File;
@@ -83,6 +84,7 @@ public class LXStudioApp extends PApplet implements LXPlugin {
     lx.registry.addPattern(org.projectempire.lx.pattern.ui.pattern.FirePattern.class);
     lx.registry.addEffect(heronarts.lx.app.effect.AppEffect.class);
     lx.registry.addEffect(BreatheEffect.class);
+    lx.registry.addEffect(PulseEffect.class);
     lx.registry.addFixture(org.projectempire.lx.structure.ButtBottomFixture.class);
     lx.registry.addFixture(org.projectempire.lx.structure.HornHookFixture.class);
     lx.registry.addFixture(org.projectempire.lx.structure.HornSFixture.class);
