@@ -5,16 +5,20 @@ import heronarts.lx.LXCategory;
 import heronarts.lx.color.LXColor;
 import heronarts.lx.effect.LXEffect;
 import heronarts.lx.modulator.SinLFO;
-import heronarts.lx.modulator.TriangleLFO;
+import heronarts.lx.parameter.BoundedParameter;
 
 @LXCategory("Empire")
 public class BreatheEffect extends LXEffect {
-    TriangleLFO triangleLFO = new TriangleLFO(0, 50, 8000);
-    SinLFO sinLFO = new SinLFO(0, 50, 6000);
+    //private TriangleLFO triangleLFO = new TriangleLFO(0, 50, 8000);
+    public BoundedParameter depth = new BoundedParameter("Depth", 90, 0, 100);
+    public BoundedParameter speed = new BoundedParameter("Speed", 6000, 1000, 10000);
+    private SinLFO sinLFO = new SinLFO(0, depth, speed);
 
     public BreatheEffect(LX lx) {
         super(lx);
-        startModulator(triangleLFO);
+        //startModulator(triangleLFO);
+        addParameter("Speed", this.speed);
+        addParameter("Depth", this.depth);
         startModulator(sinLFO);
     }
 

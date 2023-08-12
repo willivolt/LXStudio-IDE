@@ -38,6 +38,7 @@ public class RingPattern extends LXPattern {
     }
 
     private static final int NUM_BANDS = 5;
+    private static final LXUtils.LookupTable.Sin SIN_TABLE = new LXUtils.LookupTable.Sin(500);
     public final EnumParameter<ColorMode> colorMode =
             new EnumParameter<ColorMode>("Color Mode", ColorMode.FIXED)
                     .setDescription("Which source the gradient selects colors from");
@@ -92,7 +93,7 @@ public class RingPattern extends LXPattern {
             for (LXPoint p : model.points) {
                 //int band = (int)(p.zn / (1f / (float)(NUM_BANDS - 1)));
                 //int sign = (band % 2 == 0) ? -1 : 1;
-                float b = Math.abs(LXUtils.sinf(((sign * offset) + p.theta)));
+                float b = Math.abs(SIN_TABLE.sin((sign * offset) + p.theta));
                 //b = Math.abs(LXUtils.trif((sign * offset) + (p.theta / LX.TWO_PIf)));
                 colors[p.index] = LX.hsb(h, s, b * 100);
             }
