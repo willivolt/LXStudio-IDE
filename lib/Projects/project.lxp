@@ -1,6 +1,6 @@
 {
   "version": "0.4.0",
-  "timestamp": 1691892036794,
+  "timestamp": 1691896692325,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -4970,7 +4970,7 @@
             "class": "heronarts.lx.mixer.LXChannel",
             "internal": {
               "modulationColor": 0,
-              "controlsExpanded": true
+              "controlsExpanded": false
             },
             "parameters": {
               "label": "Fan",
@@ -4998,8 +4998,45 @@
             "children": {},
             "effects": [],
             "clips": [],
-            "patternIndex": -1,
-            "patterns": []
+            "patternIndex": 0,
+            "patterns": [
+              {
+                "id": 31227,
+                "class": "heronarts.lx.pattern.color.SolidPattern",
+                "internal": {
+                  "modulationColor": 0,
+                  "expanded": false,
+                  "modulationExpanded": false,
+                  "autoCycleEligible": true
+                },
+                "parameters": {
+                  "label": "Solid",
+                  "recall": false,
+                  "color/brightness": 100.0,
+                  "color/saturation": 0.0,
+                  "color/hue": 0.0,
+                  "colorMode": 0,
+                  "paletteIndex": 1
+                },
+                "children": {
+                  "modulation": {
+                    "id": 31228,
+                    "class": "heronarts.lx.modulation.LXModulationEngine",
+                    "internal": {
+                      "modulationColor": 0
+                    },
+                    "parameters": {
+                      "label": "Modulation"
+                    },
+                    "children": {},
+                    "modulators": [],
+                    "modulations": [],
+                    "triggers": []
+                  }
+                },
+                "deviceVersion": -1
+              }
+            ]
           }
         ]
       },
@@ -26773,8 +26810,8 @@
         "camera": {
           "active": false,
           "radius": 317.33102136022904,
-          "theta": 132.92506301729009,
-          "phi": 0.07424204889684916,
+          "theta": 132.76088945800439,
+          "phi": 0.043839538004249334,
           "x": -36.50572220236063,
           "y": -11.224573977291584,
           "z": 196.18088926770724
@@ -26783,8 +26820,8 @@
           {
             "active": false,
             "radius": 317.33102136022904,
-            "theta": 132.92506301729009,
-            "phi": 0.07424204889684916,
+            "theta": 132.76088945800439,
+            "phi": 0.043839538004249334,
             "x": -36.50572220236063,
             "y": -11.224573977291584,
             "z": 196.18088926770724
