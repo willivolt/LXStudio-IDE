@@ -1,6 +1,6 @@
 {
   "version": "0.4.0",
-  "timestamp": 1692156145378,
+  "timestamp": 1692158720514,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -518,7 +518,7 @@
           "opcOffset": 0,
           "ddpDataOffset": 0,
           "kinetPort": 1,
-          "numPoints": 200,
+          "numPoints": 197,
           "radius": 15.5,
           "degrees": 359.9,
           "positionMode": 0
@@ -2970,7 +2970,7 @@
           "pitch": 0.0,
           "roll": 0.0,
           "scale": 1.0,
-          "selected": true,
+          "selected": false,
           "deactivate": false,
           "enabled": true,
           "brightness": 1.0,
@@ -3068,6 +3068,86 @@
           "opcOffset": 0,
           "ddpDataOffset": 0,
           "kinetPort": 1
+        },
+        "children": {}
+      },
+      {
+        "id": 32325,
+        "class": "heronarts.lx.structure.StripFixture",
+        "internal": {
+          "modulationColor": 0
+        },
+        "parameters": {
+          "label": "Drive Door Pocket",
+          "x": -45.0,
+          "y": -60.0,
+          "z": 274.0,
+          "yaw": 90.0,
+          "pitch": 0.0,
+          "roll": 45.0,
+          "scale": 1.0,
+          "selected": false,
+          "deactivate": false,
+          "enabled": true,
+          "brightness": 1.0,
+          "identify": false,
+          "mute": false,
+          "solo": false,
+          "tags": "door grill",
+          "protocol": 1,
+          "byteOrder": 0,
+          "transport": 0,
+          "reverse": false,
+          "host": "192.168.3.103",
+          "port": 7890,
+          "dmxChannel": 138,
+          "artNetUniverse": 72,
+          "opcChannel": 0,
+          "opcOffset": 0,
+          "ddpDataOffset": 0,
+          "kinetPort": 1,
+          "numPoints": 19,
+          "spacing": 0.5
+        },
+        "children": {}
+      },
+      {
+        "id": 32548,
+        "class": "heronarts.lx.structure.StripFixture",
+        "internal": {
+          "modulationColor": 0
+        },
+        "parameters": {
+          "label": "Pass Door Pocket",
+          "x": 45.0,
+          "y": -60.0,
+          "z": 274.0,
+          "yaw": 90.0,
+          "pitch": 0.0,
+          "roll": 45.0,
+          "scale": 1.0,
+          "selected": true,
+          "deactivate": false,
+          "enabled": true,
+          "brightness": 1.0,
+          "identify": false,
+          "mute": false,
+          "solo": false,
+          "tags": "door grill",
+          "protocol": 1,
+          "byteOrder": 0,
+          "transport": 0,
+          "reverse": false,
+          "host": "192.168.3.103",
+          "port": 7890,
+          "dmxChannel": 81,
+          "artNetUniverse": 72,
+          "opcChannel": 0,
+          "opcOffset": 0,
+          "ddpDataOffset": 0,
+          "kinetPort": 1,
+          "numPoints": 19,
+          "spacing": 0.5
         },
         "children": {}
       }
@@ -3536,7 +3616,7 @@
           "scene-5": false,
           "crossfader": 0.5,
           "crossfaderBlendMode": 0,
-          "focusedChannel": 15,
+          "focusedChannel": 1,
           "cueA": false,
           "cueB": false,
           "viewCondensed": false
@@ -3594,7 +3674,7 @@
             "parameters": {
               "label": "Body",
               "arm": false,
-              "selected": false,
+              "selected": true,
               "enabled": true,
               "cue": false,
               "fader": 1.0,
@@ -3603,7 +3683,7 @@
               "midiMonitor": false,
               "midiChannel": 16,
               "viewEnabled": true,
-              "viewSelector": "butt horn grill eye bubble",
+              "viewSelector": "butt horn grill eye bubble door",
               "viewNormalization": 0,
               "autoCycleEnabled": false,
               "autoCycleMode": 0,
@@ -5091,7 +5171,7 @@
             "parameters": {
               "label": "Fan",
               "arm": false,
-              "selected": true,
+              "selected": false,
               "enabled": false,
               "cue": false,
               "fader": 0.0,
@@ -26925,9 +27005,9 @@
         "centerPoint": false,
         "camera": {
           "active": false,
-          "radius": 317.33102136022904,
-          "theta": 134.2331260573119,
-          "phi": 0.21631913213059306,
+          "radius": 229.79024460384707,
+          "theta": 128.0546599831432,
+          "phi": 0.22863916121423244,
           "x": -36.50572220236063,
           "y": -11.224573977291584,
           "z": 196.18088926770724
@@ -26935,9 +27015,9 @@
         "cue": [
           {
             "active": false,
-            "radius": 317.33102136022904,
-            "theta": 134.2331260573119,
-            "phi": 0.21631913213059306,
+            "radius": 229.79024460384707,
+            "theta": 128.0546599831432,
+            "phi": 0.22863916121423244,
             "x": -36.50572220236063,
             "y": -11.224573977291584,
             "z": 196.18088926770724
