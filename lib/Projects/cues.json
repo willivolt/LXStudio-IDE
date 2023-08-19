@@ -1,0 +1,68 @@
+{
+  "test": [
+    {
+      "address": "/lx/mixer/channel/6/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/6/fader",
+      "arguments": [ 100 ]
+    }
+  ],
+  "BodyPulse": [
+    {
+      "address": "/lx/snapshots/Body-Pulse/recall",
+      "arguments": [ 1 ]
+    }
+  ],
+  "FogOn": [
+    {
+      "address": "/lx/mixer/channel/8/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/9/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/8/fader",
+      "arguments": [ 100 ]
+    },
+    {
+      "address": "/lx/mixer/channel/9/fader",
+      "arguments": [ 100 ]
+    }
+  ],
+  "FogOff": [
+    {
+      "address": "/lx/mixer/channel/8/enabled",
+      "arguments": [ 0 ]
+    },
+    {
+      "address": "/lx/mixer/channel/9/enabled",
+      "arguments": [ 0 ]
+    },
+    {
+      "address": "/lx/mixer/channel/8/fader",
+      "arguments": [ 0 ]
+    },
+    {
+      "address": "/lx/mixer/channel/9/fader",
+      "arguments": [ 0 ]
+    }
+  ],
+  "FloodNoise": [
+    {
+      "address": "/lx/mixer/channel/4/pattern/1/recall",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/4/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/4/fader",
+      "arguments": [ 100 ]
+    }
+  ]
+}

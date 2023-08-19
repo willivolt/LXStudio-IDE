@@ -88,7 +88,7 @@ public class RingPattern extends LXPattern {
         float offset = (float) (rot * (Math.PI / 180));
         // TODO: access points through model.children of model.childDict so we know which ring we are in
         List<LXModel> models = new ArrayList<>(this.model.children("nozzle"));
-        models.addAll(this.model.children("neo"));
+        models.addAll(this.model.children("puck"));
         for (LXModel model : models) {
             for (LXPoint p : model.points) {
                 //int band = (int)(p.zn / (1f / (float)(NUM_BANDS - 1)));

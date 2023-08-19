@@ -20,12 +20,15 @@ package heronarts.lx.app;
 
 import heronarts.lx.LX;
 import heronarts.lx.LXPlugin;
+import heronarts.lx.osc.LXOscEngine;
 import heronarts.lx.studio.LXStudio;
 import org.projectempire.lx.effect.BreatheEffect;
 import org.projectempire.lx.effect.PulseEffect;
+import org.projectempire.lx.osc.OscCueListener;
 import processing.core.PApplet;
 
 import java.io.File;
+import java.net.SocketException;
 
 /**
  * This is an example top-level class to build and run an LX Studio
@@ -82,12 +85,20 @@ public class LXStudioApp extends PApplet implements LXPlugin {
     lx.registry.addPattern(heronarts.lx.app.pattern.AppPattern.class);
     lx.registry.addPattern(org.projectempire.lx.pattern.ui.pattern.RingPattern.class);
     lx.registry.addPattern(org.projectempire.lx.pattern.ui.pattern.FirePattern.class);
+    lx.registry.addPattern(org.projectempire.lx.pattern.ui.pattern.NasaPattern.class);
+    lx.registry.addPattern(org.projectempire.lx.pattern.ui.pattern.FillPattern.class);
     lx.registry.addEffect(heronarts.lx.app.effect.AppEffect.class);
     lx.registry.addEffect(BreatheEffect.class);
     lx.registry.addEffect(PulseEffect.class);
     lx.registry.addFixture(org.projectempire.lx.structure.ButtBottomFixture.class);
     lx.registry.addFixture(org.projectempire.lx.structure.HornHookFixture.class);
     lx.registry.addFixture(org.projectempire.lx.structure.HornSFixture.class);
+    try {
+      LXOscEngine.Receiver receiver = lx.engine.osc.receiver(lx.engine.osc.receivePort.getValuei()+1);
+      receiver.addListener(new OscCueListener(lx));
+    } catch (SocketException e) {
+      LX.log("Error adding OSC listener " + e.getMessage());
+    }
   }
 
   public void initializeUI(LXStudio lx, LXStudio.UI ui) {
