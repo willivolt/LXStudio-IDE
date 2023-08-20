@@ -1,6 +1,6 @@
 {
   "version": "0.4.0",
-  "timestamp": 1692487892073,
+  "timestamp": 1692493539938,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -254,7 +254,7 @@
           "pitch": 0.0,
           "roll": 0.0,
           "scale": 1.0,
-          "selected": false,
+          "selected": true,
           "deactivate": false,
           "enabled": true,
           "brightness": 1.0,
@@ -268,7 +268,7 @@
           "reverse": false,
           "host": "192.168.3.101",
           "port": 7890,
-          "dmxChannel": 24,
+          "dmxChannel": 23,
           "artNetUniverse": 32,
           "opcChannel": 0,
           "opcOffset": 0,
@@ -2406,7 +2406,7 @@
           "pitch": 0.0,
           "roll": 0.0,
           "scale": 1.0,
-          "selected": true,
+          "selected": false,
           "deactivate": false,
           "enabled": true,
           "brightness": 1.0,
@@ -4668,7 +4668,7 @@
           "autoCycleEnabled": false,
           "autoCycleMode": 0,
           "autoCycleTimeSecs": 0.5,
-          "autoCycleCursor": 7,
+          "autoCycleCursor": -1,
           "triggerSnapshotCycle": false
         },
         "children": {},
@@ -21768,7 +21768,7 @@
         "parameters": {
           "label": "OSC",
           "receiveHost": "0.0.0.0",
-          "receivePort": 3030,
+          "receivePort": 3029,
           "receiveActive": true,
           "transmitHost": "localhost",
           "transmitPort": 3131,
