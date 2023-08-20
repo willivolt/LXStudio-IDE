@@ -94,7 +94,7 @@ public class LXStudioApp extends PApplet implements LXPlugin {
     lx.registry.addFixture(org.projectempire.lx.structure.HornHookFixture.class);
     lx.registry.addFixture(org.projectempire.lx.structure.HornSFixture.class);
     try {
-      LXOscEngine.Receiver receiver = lx.engine.osc.receiver(lx.engine.osc.receivePort.getValuei()+1);
+      LXOscEngine.Receiver receiver = lx.engine.osc.receiver(3030);
       receiver.addListener(new OscCueListener(lx));
     } catch (SocketException e) {
       LX.log("Error adding OSC listener " + e.getMessage());
