@@ -78,6 +78,10 @@ public class FillPattern extends LXPattern implements UIDeviceControls<FillPatte
     @Override
     public void onActive() {
         super.onActive();
+        for (int i = 0; i < this.model.points.length; i++) {
+            this.colors[this.model.points[i].index] = LXColor.BLACK;
+        }
+
         totalTime = 0;
     }
 

@@ -5,6 +5,12 @@
       "arguments": [ ]
     }
   ],
+  "DrivingMode": [
+    {
+      "address": "/lx/snapshots/Cruising-Noise/recall",
+      "arguments": [ 1 ]
+    }
+  ],
   "BodyPulse": [
     {
       "address": "/lx/snapshots/Body-Pulse/recall",
@@ -68,7 +74,7 @@
     },
     {
       "address": "/lx/mixer/channel/6/pattern/3/speed",
-      "arguments": [ 3.0 ]
+      "arguments": [ 0.8 ]
     },
     {
       "address": "/lx/mixer/channel/6/pattern/3/color/hue",
@@ -212,6 +218,10 @@
     }
   ],
   "NozzleSpin": [
+    {
+      "address": "/lx/mixer/channel/6/enabled",
+      "arguments": [ 0 ]
+    },
     {
       "address": "/lx/mixer/channel/3/effect/1/enabled",
       "arguments": [ 0 ]
