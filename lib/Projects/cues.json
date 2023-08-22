@@ -25,6 +25,16 @@
       "arguments": [ 0 ]
     }
   ],
+  "FogVolume": [
+    {
+      "address": "/lx/mixer/channel/8/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/8/fader",
+      "arguments": [ ]
+    }
+  ],
   "FanOn": [
     {
       "address": "/lx/mixer/channel/9/enabled",
@@ -32,7 +42,7 @@
     },
     {
       "address": "/lx/mixer/channel/9/fader",
-      "arguments": [ 100 ]
+      "arguments": [ 1 ]
     }
   ],
   "FanOff": [
@@ -64,7 +74,7 @@
     },
     {
       "address": "/lx/mixer/channel/6/fader",
-      "arguments": [ 100 ]
+      "arguments": [ 1 ]
     },
     {
       "address": "/lx/mixer/channel/6/pattern/3/recall",
@@ -82,7 +92,7 @@
     },
     {
       "address": "/lx/mixer/channel/4/fader",
-      "arguments": [ 100 ]
+      "arguments": [ 1 ]
     }
   ],
   "NozzleSpin1": [
@@ -104,7 +114,7 @@
     },
     {
       "address": "/lx/mixer/channel/3/fader",
-      "arguments": [ 100 ]
+      "arguments": [ 1 ]
     }
   ],
   "NozzleSpin2": [
@@ -126,7 +136,7 @@
     },
     {
       "address": "/lx/mixer/channel/3/fader",
-      "arguments": [ 100 ]
+      "arguments": [ 1 ]
     }
   ],
   "NozzleSpin3": [
@@ -148,7 +158,7 @@
     },
     {
       "address": "/lx/mixer/channel/3/fader",
-      "arguments": [ 100 ]
+      "arguments": [ 1 ]
     }
   ],
   "NozzleSpin4": [
@@ -170,7 +180,7 @@
     },
     {
       "address": "/lx/mixer/channel/3/fader",
-      "arguments": [ 100 ]
+      "arguments": [ 1 ]
     }
   ],
   "NozzleSpin5": [
@@ -192,7 +202,7 @@
     },
     {
       "address": "/lx/mixer/channel/3/fader",
-      "arguments": [ 100 ]
+      "arguments": [ 1 ]
     }
   ],
   "NozzleSpin": [
@@ -214,7 +224,7 @@
     },
     {
       "address": "/lx/mixer/channel/3/fader",
-      "arguments": [ 100 ]
+      "arguments": [ 1 ]
     }
   ]
 }

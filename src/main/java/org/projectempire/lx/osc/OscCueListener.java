@@ -6,6 +6,12 @@ import com.google.gson.reflect.TypeToken;
 import heronarts.lx.LX;
 import heronarts.lx.osc.LXOscEngine;
 import heronarts.lx.osc.LXOscListener;
+import heronarts.lx.osc.OscArgument;
+import heronarts.lx.osc.OscBool;
+import heronarts.lx.osc.OscDouble;
+import heronarts.lx.osc.OscFloat;
+import heronarts.lx.osc.OscInt;
+import heronarts.lx.osc.OscLong;
 import heronarts.lx.osc.OscMessage;
 
 import java.io.File;
@@ -50,6 +56,7 @@ public class OscCueListener implements LXOscListener {
                         if (message.size() > 0) {
                             String cueName = message.get(0).toString();
                             List<EmpireOscCue> cues = getCue(cueName);
+                            copyIncomingArguments(message, cues);
                             if (cues != null) {
                                 runCues(cues);
                             } else {
@@ -71,8 +78,38 @@ public class OscCueListener implements LXOscListener {
         }
     }
 
+    private void copyIncomingArguments(OscMessage message, List<EmpireOscCue> cues) {
+        // copy arguments from incoming message to cues
+        if (message.size() > 1) {
+            List<Object> arguments = new ArrayList<>();
+            for (int i = 1; i < message.size(); i++) {
+                OscArgument argument = message.get(i);
+                if (argument instanceof OscInt || argument instanceof OscLong) {
+                    arguments.add(argument.toInt());
+                } else if (argument instanceof OscFloat || argument instanceof OscDouble) {
+                    arguments.add(argument.toDouble());
+                } else if (argument instanceof OscBool) {
+                    arguments.add(argument.toBoolean() ? 1 : 0);
+                } else {
+                    arguments.add(argument.toString());
+                }
+            }
+            for (EmpireOscCue cue : cues) {
+                cue.arguments.addAll(arguments);
+            }
+        }
+    }
+
     private List<EmpireOscCue> getCue(String name) {
-        return cueMap.get(name);
+        List<EmpireOscCue> original = cueMap.get(name);
+        if (original == null || original.isEmpty()) {
+            return Collections.emptyList();
+        }
+        List<EmpireOscCue> copy = new ArrayList<>(original.size());
+        for (EmpireOscCue cue : original) {
+            copy.add(new EmpireOscCue(cue));
+        }
+        return copy;
     }
 
     private void runCues(List<EmpireOscCue> cues) {
@@ -126,6 +163,11 @@ public class OscCueListener implements LXOscListener {
         private List<Object> arguments = new ArrayList<>();
 
         public EmpireOscCue() {
+        }
+
+        public EmpireOscCue(EmpireOscCue cue) {
+            this.address = cue.address;
+            this.arguments.addAll(cue.arguments);
         }
 
         public EmpireOscCue(OscMessage oscMessage) {
