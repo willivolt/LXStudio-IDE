@@ -1,4 +1,10 @@
 {
+  "MasterBrightness": [
+    {
+      "address": "/lx/output/brightness",
+      "arguments": [ ]
+    }
+  ],
   "BodyPulse": [
     {
       "address": "/lx/snapshots/Body-Pulse/recall",
