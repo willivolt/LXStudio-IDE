@@ -45,6 +45,32 @@
       "arguments": [ 0 ]
     }
   ],
+  "PuckFillGreen": [
+    {
+      "address": "/lx/mixer/channel/6/effect/1/enabled",
+      "arguments": [ 0 ]
+    },
+    {
+      "address": "/lx/mixer/channel/6/pattern/3/speed",
+      "arguments": [ 3.0 ]
+    },
+    {
+      "address": "/lx/mixer/channel/6/pattern/3/color/hue",
+      "arguments": [ 0.3343 ]
+    },
+    {
+      "address": "/lx/mixer/channel/6/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/6/fader",
+      "arguments": [ 100 ]
+    },
+    {
+      "address": "/lx/mixer/channel/6/pattern/3/recall",
+      "arguments": [ 1 ]
+    }
+  ],
   "FloodNoise": [
     {
       "address": "/lx/mixer/channel/4/pattern/1/recall",
@@ -56,6 +82,138 @@
     },
     {
       "address": "/lx/mixer/channel/4/fader",
+      "arguments": [ 100 ]
+    }
+  ],
+  "NozzleSpin1": [
+    {
+      "address": "/lx/mixer/channel/3/effect/1/enabled",
+      "arguments": [ 0 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/pattern/2/recall",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/viewSelector",
+      "arguments": [ "nozzle5" ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/fader",
+      "arguments": [ 100 ]
+    }
+  ],
+  "NozzleSpin2": [
+    {
+      "address": "/lx/mixer/channel/3/effect/1/enabled",
+      "arguments": [ 0 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/pattern/2/recall",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/viewSelector",
+      "arguments": [ "nozzle4 nozzle5" ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/fader",
+      "arguments": [ 100 ]
+    }
+  ],
+  "NozzleSpin3": [
+    {
+      "address": "/lx/mixer/channel/3/effect/1/enabled",
+      "arguments": [ 0 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/pattern/2/recall",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/viewSelector",
+      "arguments": [ "nozzle3 nozzle4 nozzle5" ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/fader",
+      "arguments": [ 100 ]
+    }
+  ],
+  "NozzleSpin4": [
+    {
+      "address": "/lx/mixer/channel/3/effect/1/enabled",
+      "arguments": [ 0 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/pattern/2/recall",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/viewSelector",
+      "arguments": [ "nozzle2 nozzle3 nozzle4 nozzle5" ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/fader",
+      "arguments": [ 100 ]
+    }
+  ],
+  "NozzleSpin5": [
+    {
+      "address": "/lx/mixer/channel/3/effect/1/enabled",
+      "arguments": [ 0 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/pattern/2/recall",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/viewSelector",
+      "arguments": [ "nozzle" ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/fader",
+      "arguments": [ 100 ]
+    }
+  ],
+  "NozzleSpin": [
+    {
+      "address": "/lx/mixer/channel/3/effect/1/enabled",
+      "arguments": [ 0 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/pattern/2/recall",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/viewSelector",
+      "arguments": [ "nozzle puck" ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/3/fader",
       "arguments": [ 100 ]
     }
   ]

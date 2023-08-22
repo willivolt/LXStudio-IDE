@@ -6,7 +6,11 @@ import heronarts.lx.color.ColorParameter;
 import heronarts.lx.color.LXColor;
 import heronarts.lx.color.LXDynamicColor;
 import heronarts.lx.color.LXSwatch;
-import heronarts.lx.parameter.*;
+import heronarts.lx.parameter.CompoundParameter;
+import heronarts.lx.parameter.DiscreteParameter;
+import heronarts.lx.parameter.EnumParameter;
+import heronarts.lx.parameter.LXParameter;
+import heronarts.lx.parameter.LXParameterListener;
 import heronarts.lx.pattern.LXPattern;
 import heronarts.lx.studio.LXStudio;
 import heronarts.lx.studio.ui.device.UIDevice;
@@ -66,7 +70,9 @@ public class FillPattern extends LXPattern implements UIDeviceControls<FillPatte
     @Override
     public void onParameterChanged(LXParameter parameter) {
         super.onParameterChanged(parameter);
-        totalTime = 0;
+        if (parameter == this.color || parameter == this.paletteIndex) {
+            this.totalTime = 0;
+        }
     }
 
     @Override
@@ -95,7 +101,7 @@ public class FillPattern extends LXPattern implements UIDeviceControls<FillPatte
         for (int i = 0; i < fillCount; i++) {
             this.colors[this.model.points[i].index] = color;
         }
-        LX.log("FillPattern: fillPercent " + fillPercent + " fillCount " + fillCount + " totalTime " + totalTime);
+        //LX.log("FillPattern: fillPercent " + fillPercent + " fillCount " + fillCount + " totalTime " + totalTime);
     }
 
     @Override

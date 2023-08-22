@@ -12,9 +12,11 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
-import java.net.SocketException;
-import java.net.UnknownHostException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class OscCueListener implements LXOscListener {
@@ -27,7 +29,7 @@ public class OscCueListener implements LXOscListener {
         this.lx = lx;
         loadCueJson();
         try {
-            transmitter = lx.engine.osc.transmitter("127.0.0.1", lx.engine.osc.receivePort.getValuei());
+            transmitter = lx.engine.osc.transmitter("127.0.0.1", 3029);
         } catch (Exception e) {
             LX.error(e);
         }
@@ -36,32 +38,36 @@ public class OscCueListener implements LXOscListener {
     @Override
     public void oscMessage(OscMessage message) {
         LX.log("Cue: " + cue.incrementAndGet() + " " + message.toString());
-        String address = message.getAddressPattern().toString();
-        if (address != address.trim()) {
-            LX.error("Address has leading or trailing whitespace: \"" + address + "\"");
-        }
-        String[] parts = address.split("/");
-        if (parts.length > 0) {
-            if ("empire".equals(parts[1])) {
-                if (parts.length > 2 && "cue".equals(parts[2])) {
-                    if (message.size() > 0) {
-                        String cueName = message.get(0).toString();
-                        List<EmpireOscCue> cues = getCue(cueName);
-                        if (cues != null) {
-                            runCues(cues);
+        try {
+            String address = message.getAddressPattern().toString();
+            if (address != address.trim()) {
+                LX.error("Address has leading or trailing whitespace: \"" + address + "\"");
+            }
+            String[] parts = address.split("/");
+            if (parts.length > 0) {
+                if ("empire".equals(parts[1])) {
+                    if (parts.length > 2 && "cue".equals(parts[2])) {
+                        if (message.size() > 0) {
+                            String cueName = message.get(0).toString();
+                            List<EmpireOscCue> cues = getCue(cueName);
+                            if (cues != null) {
+                                runCues(cues);
+                            } else {
+                                LX.error("Cue not found: " + cueName);
+                            }
                         } else {
-                            LX.error("Cue not found: " + cueName);
+                            LX.error("Cue name not specified");
                         }
                     } else {
-                        LX.error("Cue name not specified");
+                        LX.error("Unknown empire command: " + address);
                     }
-                } else {
-                    LX.error("Unknown empire command: " + address);
+                } else if ("lx".equals(parts[1])) {
+                    // pass message to lx engine
+                   transmitter.send(message);
                 }
-            } else if ("lx".equals(parts[1])) {
-                // pass message to lx engine
-               lx.engine.handleOscMessage(message, parts, 2);
             }
+        } catch (Exception e) {
+            LX.error(e);
         }
     }
 
