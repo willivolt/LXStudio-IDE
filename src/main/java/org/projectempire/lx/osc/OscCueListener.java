@@ -60,13 +60,13 @@ public class OscCueListener implements LXOscListener {
                             if (cues != null) {
                                 runCues(cues);
                             } else {
-                                LX.error("Cue not found: " + cueName);
+                                LX.error("Cue not found: '" + cueName + "'");
                             }
                         } else {
                             LX.error("Cue name not specified");
                         }
                     } else {
-                        LX.error("Unknown empire command: " + address);
+                        LX.error("Unknown empire command: '" + parts[2] + "'");
                     }
                 } else if ("lx".equals(parts[1])) {
                     // pass message to lx engine

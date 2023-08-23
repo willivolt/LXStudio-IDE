@@ -67,7 +67,43 @@
       "arguments": [ 0 ]
     }
   ],
+  "FloodBrightness": [
+    {
+      "address": "/lx/mixer/channel/4/pattern/2/recall",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/4/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/4/fader",
+      "arguments": [ ]
+    }
+  ],
+  "FloodFlash": [
+    {
+      "address": "/lx/mixer/channel/4/pattern/2/recall",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/4/enabled",
+      "arguments": [ 1 ]
+    },
+    {
+      "address": "/lx/mixer/channel/4/fader",
+      "arguments": [ 0 ]
+    },
+    {
+      "address": "/lx/modulation/LFO/trigger",
+      "arguments": [ 1 ]
+    }
+  ],
   "PuckFillGreen": [
+    {
+      "address": "/lx/mixer/channel/6/viewSelector",
+      "arguments": [ "puck" ]
+    },
     {
       "address": "/lx/mixer/channel/6/effect/1/enabled",
       "arguments": [ 0 ]
@@ -241,6 +277,12 @@
     {
       "address": "/lx/mixer/channel/3/fader",
       "arguments": [ 1 ]
+    }
+  ],
+  "NozzleSpinSpeed" : [
+    {
+      "address": "/lx/mixer/channel/3/pattern/2/speed",
+      "arguments": [ ]
     }
   ]
 }
