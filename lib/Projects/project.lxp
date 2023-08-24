@@ -1,6 +1,6 @@
 {
   "version": "0.4.0",
-  "timestamp": 1692844567681,
+  "timestamp": 1692849183790,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -498,7 +498,7 @@
           "pitch": 0.0,
           "roll": 0.0,
           "scale": 1.0,
-          "selected": true,
+          "selected": false,
           "deactivate": false,
           "enabled": true,
           "brightness": 1.0,
@@ -3126,7 +3126,7 @@
           "pitch": 0.0,
           "roll": 45.0,
           "scale": 1.0,
-          "selected": false,
+          "selected": true,
           "deactivate": false,
           "enabled": true,
           "brightness": 1.0,
@@ -3782,7 +3782,7 @@
                 "class": "heronarts.lx.pattern.texture.NoisePattern",
                 "internal": {
                   "modulationColor": 0,
-                  "expanded": false,
+                  "expanded": true,
                   "modulationExpanded": false,
                   "autoCycleEligible": true
                 },
@@ -3794,7 +3794,7 @@
                   "xOffset": 0.0,
                   "yOffset": 0.0,
                   "zOffset": 0.0,
-                  "scale": 0.5,
+                  "scale": 1.0,
                   "minScale": 1.0,
                   "maxScale": 10.0,
                   "xScale": 1.0,
@@ -4721,7 +4721,7 @@
           "autoCycleEnabled": false,
           "autoCycleMode": 0,
           "autoCycleTimeSecs": 0.5,
-          "autoCycleCursor": 7,
+          "autoCycleCursor": -1,
           "triggerSnapshotCycle": false
         },
         "children": {},
@@ -16926,8 +16926,8 @@
                 "type": "PARAMETER",
                 "enabled": true,
                 "parameterPath": "/lx/mixer/channel/2/pattern/1/scale",
-                "value": 0.5,
-                "normalizedValue": 0.5
+                "value": 1.0,
+                "normalizedValue": 1.0
               },
               {
                 "scope": "PATTERNS",
@@ -17142,8 +17142,8 @@
                 "type": "PARAMETER",
                 "enabled": true,
                 "parameterPath": "/lx/mixer/channel/2/pattern/1/scale",
-                "value": 0.5,
-                "normalizedValue": 0.5
+                "value": 1.0,
+                "normalizedValue": 1.0
               },
               {
                 "scope": "PATTERNS",
