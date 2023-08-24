@@ -1,6 +1,6 @@
 {
   "version": "0.4.0",
-  "timestamp": 1692762797599,
+  "timestamp": 1692844567681,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -456,7 +456,7 @@
           "pitch": 0.0,
           "roll": -165.0,
           "scale": 1.0,
-          "selected": true,
+          "selected": false,
           "deactivate": false,
           "enabled": true,
           "brightness": 1.0,
@@ -498,7 +498,7 @@
           "pitch": 0.0,
           "roll": 0.0,
           "scale": 1.0,
-          "selected": false,
+          "selected": true,
           "deactivate": false,
           "enabled": true,
           "brightness": 1.0,
@@ -507,7 +507,7 @@
           "solo": false,
           "tags": "grill",
           "protocol": 1,
-          "byteOrder": 5,
+          "byteOrder": 0,
           "transport": 0,
           "reverse": false,
           "host": "192.168.3.103",
@@ -3176,12 +3176,12 @@
         },
         "parameters": {
           "label": "Color Palette",
-          "transitionEnabled": false,
-          "transitionTimeSecs": 30.0,
+          "transitionEnabled": true,
+          "transitionTimeSecs": 5.0,
           "transitionMode": 0,
-          "autoCycleEnabled": false,
+          "autoCycleEnabled": true,
           "autoCycleMode": 0,
-          "autoCycleTimeSecs": 60.0,
+          "autoCycleTimeSecs": 300.0,
           "autoCycleCursor": 3,
           "triggerSwatchCycle": false
         },
@@ -3986,7 +3986,7 @@
                 "parameters": {
                   "label": "Ring",
                   "recall": false,
-                  "speed": 1999.8499751091003,
+                  "speed": 5000.0,
                   "color/brightness": 100.0,
                   "color/saturation": 100.0,
                   "color/hue": 0.0,
@@ -4694,7 +4694,7 @@
         "parameters": {
           "label": "Output",
           "enabled": true,
-          "brightness": 0.8000000072643161,
+          "brightness": 1.0,
           "fps": 0.0,
           "gamma": 1.0,
           "gammaMode": 1
@@ -16823,8 +16823,8 @@
                 "type": "PARAMETER",
                 "enabled": true,
                 "parameterPath": "/lx/output/brightness",
-                "value": 0.8000000072643161,
-                "normalizedValue": 0.8000000072643161
+                "value": 1.0,
+                "normalizedValue": 1.0
               },
               {
                 "scope": "MIXER",
@@ -19369,6 +19369,134 @@
                 "parameterPath": "/lx/mixer/channel/9/pattern/1/paletteIndex",
                 "value": 1,
                 "normalizedValue": 0.0
+              },
+              {
+                "scope": "MODULATION",
+                "type": "PARAMETER",
+                "enabled": true,
+                "parameterPath": "/lx/modulation/modulator/1/label",
+                "value": "LFO",
+                "normalizedValue": 0.0
+              },
+              {
+                "scope": "MODULATION",
+                "type": "PARAMETER",
+                "enabled": true,
+                "parameterPath": "/lx/modulation/modulator/1/running",
+                "value": 0.0,
+                "normalizedValue": 0.0
+              },
+              {
+                "scope": "MODULATION",
+                "type": "PARAMETER",
+                "enabled": true,
+                "parameterPath": "/lx/modulation/modulator/1/trigger",
+                "value": 0.0,
+                "normalizedValue": 0.0
+              },
+              {
+                "scope": "MODULATION",
+                "type": "PARAMETER",
+                "enabled": true,
+                "parameterPath": "/lx/modulation/modulator/1/loop",
+                "value": 0.0,
+                "normalizedValue": 0.0
+              },
+              {
+                "scope": "MODULATION",
+                "type": "PARAMETER",
+                "enabled": true,
+                "parameterPath": "/lx/modulation/modulator/1/tempoSync",
+                "value": 0.0,
+                "normalizedValue": 0.0
+              },
+              {
+                "scope": "MODULATION",
+                "type": "PARAMETER",
+                "enabled": true,
+                "parameterPath": "/lx/modulation/modulator/1/tempoMultiplier",
+                "value": 5,
+                "normalizedValue": 0.3333333333333333
+              },
+              {
+                "scope": "MODULATION",
+                "type": "PARAMETER",
+                "enabled": true,
+                "parameterPath": "/lx/modulation/modulator/1/tempoLock",
+                "value": 1.0,
+                "normalizedValue": 1.0
+              },
+              {
+                "scope": "MODULATION",
+                "type": "PARAMETER",
+                "enabled": true,
+                "parameterPath": "/lx/modulation/modulator/1/clockMode",
+                "value": 0,
+                "normalizedValue": 0.0
+              },
+              {
+                "scope": "MODULATION",
+                "type": "PARAMETER",
+                "enabled": true,
+                "parameterPath": "/lx/modulation/modulator/1/periodFast",
+                "value": 216.73733704244898,
+                "normalizedValue": 0.2101095245176453
+              },
+              {
+                "scope": "MODULATION",
+                "type": "PARAMETER",
+                "enabled": true,
+                "parameterPath": "/lx/modulation/modulator/1/periodSlow",
+                "value": 10000.0,
+                "normalizedValue": 0.3163156681145601
+              },
+              {
+                "scope": "MODULATION",
+                "type": "PARAMETER",
+                "enabled": true,
+                "parameterPath": "/lx/modulation/modulator/1/wave",
+                "value": 1,
+                "normalizedValue": 0.25
+              },
+              {
+                "scope": "MODULATION",
+                "type": "PARAMETER",
+                "enabled": true,
+                "parameterPath": "/lx/modulation/modulator/1/skew",
+                "value": 0.0,
+                "normalizedValue": 0.5
+              },
+              {
+                "scope": "MODULATION",
+                "type": "PARAMETER",
+                "enabled": true,
+                "parameterPath": "/lx/modulation/modulator/1/shape",
+                "value": 0.0,
+                "normalizedValue": 0.5
+              },
+              {
+                "scope": "MODULATION",
+                "type": "PARAMETER",
+                "enabled": true,
+                "parameterPath": "/lx/modulation/modulator/1/bias",
+                "value": 0.0,
+                "normalizedValue": 0.5
+              },
+              {
+                "scope": "MODULATION",
+                "type": "PARAMETER",
+                "enabled": true,
+                "parameterPath": "/lx/modulation/modulator/1/phase",
+                "value": 0.0,
+                "normalizedValue": 0.0
+              },
+              {
+                "scope": "MODULATION",
+                "type": "PARAMETER",
+                "enabled": true,
+                "parameterPath": "/lx/modulation/modulator/1/exp",
+                "value": 0.0,
+                "normalizedValue": 0.5
               }
             ]
           },
@@ -22916,7 +23044,7 @@
           "transmitHost": "localhost",
           "transmitPort": 3131,
           "transmitActive": false,
-          "logInput": false,
+          "logInput": true,
           "logOutput": false
         },
         "children": {}
@@ -22944,8 +23072,8 @@
         "camera": {
           "active": false,
           "radius": 274.3114294170203,
-          "theta": 126.85532204760239,
-          "phi": -0.03952319035306573,
+          "theta": 126.64907690091059,
+          "phi": 0.12297299271449447,
           "x": -40.89491356164217,
           "y": 3.4329900071024895,
           "z": 194.95295452699065
@@ -22954,8 +23082,8 @@
           {
             "active": false,
             "radius": 274.3114294170203,
-            "theta": 126.85532204760239,
-            "phi": -0.03952319035306573,
+            "theta": 126.64907690091059,
+            "phi": 0.12297299271449447,
             "x": -40.89491356164217,
             "y": 3.4329900071024895,
             "z": 194.95295452699065
