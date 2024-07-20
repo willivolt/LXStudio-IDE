@@ -1,6 +1,6 @@
 {
   "version": "0.4.0",
-  "timestamp": 1721515201658,
+  "timestamp": 1721518484336,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -3286,7 +3286,7 @@
           "pitch": 0.0,
           "roll": 0.0,
           "scale": 1.0,
-          "selected": true,
+          "selected": false,
           "deactivate": false,
           "enabled": true,
           "brightness": 1.0,
@@ -3388,6 +3388,50 @@
           "kinetPort": 1,
           "numPoints": 14,
           "spacing": 0.55
+        },
+        "children": {}
+      },
+      {
+        "id": 40303,
+        "class": "heronarts.lx.structure.GridFixture",
+        "internal": {
+          "modulationColor": 0
+        },
+        "parameters": {
+          "label": "Grid 83",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "yaw": 0.0,
+          "pitch": 0.0,
+          "roll": 0.0,
+          "scale": 1.0,
+          "selected": true,
+          "deactivate": false,
+          "enabled": true,
+          "brightness": 1.0,
+          "identify": false,
+          "mute": false,
+          "solo": false,
+          "tags": "engine",
+          "protocol": 1,
+          "byteOrder": 0,
+          "transport": 0,
+          "reverse": false,
+          "host": "192.168.3.103",
+          "port": 7890,
+          "dmxChannel": 60,
+          "artNetUniverse": 75,
+          "opcChannel": 0,
+          "opcOffset": 0,
+          "ddpDataOffset": 0,
+          "kinetPort": 1,
+          "numRows": 30,
+          "numColumns": 2,
+          "rowSpacing": 0.55,
+          "columnSpacing": 0.5,
+          "positionMode": 0,
+          "wiring": 0
         },
         "children": {}
       }
@@ -23543,9 +23587,9 @@
         "centerPoint": false,
         "camera": {
           "active": false,
-          "radius": 168.2653741587817,
-          "theta": 126.8400364574045,
-          "phi": -0.08315993752330542,
+          "radius": 271.7841625300234,
+          "theta": 125.87291862210259,
+          "phi": -0.05235998937860131,
           "x": -40.89491356164217,
           "y": 3.4329900071024895,
           "z": 194.95295452699065
@@ -23553,9 +23597,9 @@
         "cue": [
           {
             "active": false,
-            "radius": 168.2653741587817,
-            "theta": 126.8400364574045,
-            "phi": -0.08315993752330542,
+            "radius": 271.7841625300234,
+            "theta": 125.87291862210259,
+            "phi": -0.05235998937860131,
             "x": -40.89491356164217,
             "y": 3.4329900071024895,
             "z": 194.95295452699065
