@@ -41,7 +41,11 @@
 		<dependency>
 			<groupId>org.processing</groupId>
 			<artifactId>core</artifactId>
+<<<<<<< HEAD
+			<version>4.0b7</version>
+=======
 			<version>4.0.1</version>
+>>>>>>> upstream/master
 			<scope>provided</scope>
 		</dependency>
 

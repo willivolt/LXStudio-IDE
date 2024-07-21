@@ -1,5 +1,9 @@
-LX Studio
-==
+END OF LIFECYCLE NOTICE
+===
+
+LX Studio has been superceded by the [Chromatik](https://chromatik.co/) Digital Lighting Workstation, which uses the same underlying [LX](https://github.com/heronarts/LX) libraries with a new, modern UI layer. [Chromatik](https://chromatik.co/) continues in the tradition of LX Studio as an open and extensible framework for custom development. It is available for macOS, Windows, and Linux. More information can be found on the website.
+
+---
 
 **BY DOWNLOADING OR USING THE LX STUDIO SOFTWARE OR ANY PART THEREOF, YOU AGREE TO THE TERMS AND CONDITIONS OF THE [LX STUDIO SOFTWARE LICENSE AND DISTRIBUTION AGREEMENT](http://lx.studio/license).**
 
@@ -23,6 +27,33 @@ available in the repository.
 Documentation is available on the [LX Studio Wiki &rarr;](https://github.com/heronarts/LXStudio/wiki)
 
 Consult the [LX Studio API reference &rarr;](http://lx.studio/api/)
+
+### Configure Your Runtime ###
+
+Processing 4.0.1 runs on [Eclipse Temurin 17 (17.0.2+8)](https://adoptium.net/). It is highly recommend to use this JDK for consistency.
+
+The core Processing libraries are not available in Maven central. The first time you setup your project, you must manually run `mvn validate` a single time to install the Processing runtime libraries into your local Maven repository. This is a one-time only step.
+
+Running the project requires passing `-Djava.library.path=lib/processing-4.0.1/native` explicitly to the `java` command. Note that `native` is a symlink within the `processing-4.0.1` folder which should be pointed at the appropriate target platform folder.
+
+This is pre-configured in the Eclipse launch configuration `LXStudioApp.launch`
+
+If you change platforms, update the symlink using one of the following:
+```
+$ cd lib/processing-4.0.1
+$ ln -hsf linux-aarch64 native
+$ ln -hsf linux-amd64 native
+$ ln -hsf linux-arm native
+$ ln -hsf macos-aarch64 native
+$ ln -hsf macos-x86_64 native
+$ ln -hsf windows-amd64 native
+```
+
+On Windows, this command may be one of the following:
+```
+mklink /d native windows-amd64 (in CMD)
+cmd /c mklink /d native windows-amd64 (in PowerShell)
+```
 
 ### Contact and Collaboration ###
 

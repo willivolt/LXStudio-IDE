@@ -19,16 +19,20 @@
 package heronarts.lx.app;
 
 import java.io.File;
-
 import heronarts.lx.LX;
+import heronarts.lx.LXComponent;
 import heronarts.lx.LXPlugin;
+import heronarts.lx.osc.LXOscComponent;
+import heronarts.lx.parameter.BoundedParameter;
 import heronarts.lx.studio.LXStudio;
+import heronarts.p4lx.ui.component.UICollapsibleSection;
+import heronarts.p4lx.ui.component.UIKnob;
 import processing.core.PApplet;
 
 /**
  * This is an example top-level class to build and run an LX Studio
  * application via an IDE. The main() method of this class can be
- * invoked with arguments to either run with a full Processing 3 UI
+ * invoked with arguments to either run with a full Processing 4 UI
  * or as a headless command-line only engine.
  */
 public class LXStudioApp extends PApplet implements LXPlugin {
@@ -61,6 +65,12 @@ public class LXStudioApp extends PApplet implements LXPlugin {
     flags.useGLPointCloud = false;
     flags.startMultiThreaded = true;
 
+    // NOTE: it seems like on Windows systems P4LX can end
+    // up setting this to the "lib" folder depending on how
+    // dependency JARs were loaded. Explicitly set it to "."
+    // here and be sure to run explicitly from root folder
+    flags.mediaPath = ".";
+
     new LXStudio(this, flags);
     this.surface.setTitle(WINDOW_TITLE);
     if (!FULLSCREEN && HAS_WINDOW_POSITION) {
@@ -68,6 +78,26 @@ public class LXStudioApp extends PApplet implements LXPlugin {
     }
 
   }
+
+  public static class MyComponent extends LXComponent implements LXOscComponent {
+
+    public final BoundedParameter param1 =
+      new BoundedParameter("p1", 0)
+      .setDescription("A global parameter that does something");
+
+    public final BoundedParameter param2 =
+      new BoundedParameter("p2", 0)
+      .setDescription("A global parameter that does something else");
+
+    public MyComponent(LX lx) {
+      super(lx);
+      addParameter("param1", this.param1);
+      addParameter("param2", this.param2);
+    }
+  }
+
+  // A global component for additional project-specific parameters, if desired
+  public MyComponent myComponent;
 
   @Override
   public void initialize(LX lx) {
@@ -78,7 +108,14 @@ public class LXStudioApp extends PApplet implements LXPlugin {
 
     // Register custom pattern and effect types
     lx.registry.addPattern(heronarts.lx.app.pattern.AppPattern.class);
+    lx.registry.addPattern(heronarts.lx.app.pattern.AppPatternWithUI.class);
     lx.registry.addEffect(heronarts.lx.app.effect.AppEffect.class);
+
+    // Create an instance of your global component and register it with the LX engine
+    // so that it can be saved and loaded in project files
+    this.myComponent = new MyComponent(lx);
+    lx.engine.registerComponent("myComponent", this.myComponent);
+
   }
 
   public void initializeUI(LXStudio lx, LXStudio.UI ui) {
@@ -87,9 +124,21 @@ public class LXStudioApp extends PApplet implements LXPlugin {
     // for headless mode should go in the raw initialize method above.
   }
 
+  public static class UIMyComponent extends UICollapsibleSection {
+    public UIMyComponent(LXStudio.UI ui, MyComponent myComponent) {
+      super(ui, 0, 0, ui.leftPane.global.getContentWidth(), 80);
+      setTitle("MY COMPONENT");
+
+      new UIKnob(0, 0, myComponent.param1).addToContainer(this);
+      new UIKnob(40, 0, myComponent.param2).addToContainer(this);
+    }
+  }
+
   public void onUIReady(LXStudio lx, LXStudio.UI ui) {
     // At this point, the LX Studio application UI has been built. You may now add
-    // additional views and components to the Ui heirarchy.
+    // additional views and components to the UI hierarchy.
+    new UIMyComponent(ui, this.myComponent)
+    .addToContainer(ui.leftPane.global);
   }
 
   @Override
@@ -107,6 +156,19 @@ public class LXStudioApp extends PApplet implements LXPlugin {
    */
   public static void main(String[] args) {
     LX.log("Initializing LX version " + LXStudio.VERSION);
+    LX.log("Running java " +
+      System.getProperty("java.version") + " " +
+      System.getProperty("java.vendor") + " " +
+      System.getProperty("os.name") + " " +
+      System.getProperty("os.version") + " " +
+      System.getProperty("os.arch")
+    );
+
+
+    // NOTE(mcslee): Hack for macOS Sonoma!!
+    // Hopefully to be removed in a future version
+    com.jogamp.opengl.GLProfile.initSingleton();
+
     boolean headless = false;
     File projectFile = null;
     for (int i = 0; i < args.length; ++i) {
