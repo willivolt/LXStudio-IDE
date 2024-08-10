@@ -1,6 +1,6 @@
 {
   "version": "0.4.0",
-  "timestamp": 1723332652821,
+  "timestamp": 1723333398488,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -5178,7 +5178,7 @@
           "scene-5": false,
           "crossfader": 0.5,
           "crossfaderBlendMode": 0,
-          "focusedChannel": 9,
+          "focusedChannel": 10,
           "cueA": false,
           "cueB": false,
           "viewCondensed": false
@@ -6189,7 +6189,7 @@
             "parameters": {
               "label": "Engine",
               "arm": false,
-              "selected": true,
+              "selected": false,
               "enabled": true,
               "cue": false,
               "fader": 1.0,
@@ -6198,7 +6198,7 @@
               "midiMonitor": false,
               "midiChannel": 16,
               "viewEnabled": true,
-              "viewSelector": "engine phone tempc 2ball switch",
+              "viewSelector": "engine phone tempc 2ball",
               "viewNormalization": 0,
               "autoCycleEnabled": false,
               "autoCycleMode": 0,
@@ -6349,8 +6349,8 @@
             "parameters": {
               "label": "Switches",
               "arm": false,
-              "selected": false,
-              "enabled": false,
+              "selected": true,
+              "enabled": true,
               "cue": false,
               "fader": 1.0,
               "crossfadeGroup": 0,
@@ -6386,9 +6386,9 @@
                 "parameters": {
                   "label": "Solid",
                   "recall": false,
-                  "color/brightness": 100.0,
+                  "color/brightness": 74.99999237060547,
                   "color/saturation": 100.0,
-                  "color/hue": 60.0,
+                  "color/hue": 0.0,
                   "colorMode": 0,
                   "paletteIndex": 1
                 },
@@ -6451,6 +6451,33 @@
             },
             "children": {},
             "basis": 1.0
+          },
+          {
+            "id": 54447,
+            "class": "heronarts.lx.modulator.VariableLFO",
+            "internal": {
+              "modulationColor": 0
+            },
+            "parameters": {
+              "label": "LFO 2",
+              "running": true,
+              "trigger": false,
+              "loop": true,
+              "tempoSync": false,
+              "tempoMultiplier": 5,
+              "tempoLock": true,
+              "clockMode": 1,
+              "periodFast": 1000.0,
+              "periodSlow": 10000.0,
+              "wave": 1,
+              "skew": 0.0,
+              "shape": 0.0,
+              "bias": 0.0,
+              "phase": 0.0,
+              "exp": 0.0
+            },
+            "children": {},
+            "basis": 0.5216000000002754
           }
         ],
         "modulations": [
@@ -6465,6 +6492,29 @@
               "path": "/mixer/channel/4/fader"
             },
             "id": 34795,
+            "class": "heronarts.lx.modulation.LXCompoundModulation",
+            "internal": {
+              "modulationColor": 0
+            },
+            "parameters": {
+              "label": "LX",
+              "enabled": true,
+              "Polarity": 0,
+              "Range": 1.0
+            },
+            "children": {}
+          },
+          {
+            "source": {
+              "id": 54447,
+              "path": "/modulation/modulator/2"
+            },
+            "target": {
+              "componentId": 43886,
+              "parameterPath": "color/hue",
+              "path": "/mixer/channel/11/pattern/1/color/hue"
+            },
+            "id": 54450,
             "class": "heronarts.lx.modulation.LXCompoundModulation",
             "internal": {
               "modulationColor": 0
@@ -24853,7 +24903,8 @@
       "cameraExpanded": false,
       "clipViewVisible": false,
       "modulatorExpanded": {
-        "34794": true
+        "34794": true,
+        "54447": true
       },
       "preview": {
         "mode": 0,
