@@ -1,6 +1,6 @@
 {
   "version": "0.4.0",
-  "timestamp": 1722734508909,
+  "timestamp": 1723321070474,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -5569,7 +5569,7 @@
         },
         "parameters": {
           "label": "Output",
-          "enabled": true,
+          "enabled": false,
           "brightness": 1.0,
           "fps": 0.0,
           "gamma": 1.0,
