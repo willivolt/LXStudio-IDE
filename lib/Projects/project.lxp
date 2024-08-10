@@ -1,6 +1,6 @@
 {
   "version": "0.4.0",
-  "timestamp": 1723331124237,
+  "timestamp": 1723332652821,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -3850,7 +3850,7 @@
           "pitch": 0.0,
           "roll": 0.0,
           "scale": 1.0,
-          "selected": true,
+          "selected": false,
           "deactivate": false,
           "enabled": true,
           "brightness": 1.0,
@@ -4614,7 +4614,7 @@
           "pitch": 0.0,
           "roll": 0.0,
           "scale": 1.0,
-          "selected": false,
+          "selected": true,
           "deactivate": false,
           "enabled": true,
           "brightness": 1.0,
