@@ -1,6 +1,6 @@
 {
   "version": "0.4.0",
-  "timestamp": 1723333398488,
+  "timestamp": 1723334653940,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -6198,7 +6198,7 @@
               "midiMonitor": false,
               "midiChannel": 16,
               "viewEnabled": true,
-              "viewSelector": "engine phone tempc 2ball",
+              "viewSelector": "engine tempc 2ball",
               "viewNormalization": 0,
               "autoCycleEnabled": false,
               "autoCycleMode": 0,
@@ -6358,7 +6358,7 @@
               "midiMonitor": false,
               "midiChannel": 16,
               "viewEnabled": true,
-              "viewSelector": "switch",
+              "viewSelector": "switch phone",
               "viewNormalization": 0,
               "autoCycleEnabled": false,
               "autoCycleMode": 0,
@@ -6366,13 +6366,13 @@
               "transitionEnabled": false,
               "transitionTimeSecs": 5.0,
               "transitionBlendMode": 0,
-              "focusedPattern": 0,
+              "focusedPattern": 1,
               "triggerPatternCycle": false
             },
             "children": {},
             "effects": [],
             "clips": [],
-            "patternIndex": 0,
+            "patternIndex": 1,
             "patterns": [
               {
                 "id": 43886,
@@ -6395,6 +6395,37 @@
                 "children": {
                   "modulation": {
                     "id": 43887,
+                    "class": "heronarts.lx.modulation.LXModulationEngine",
+                    "internal": {
+                      "modulationColor": 0
+                    },
+                    "parameters": {
+                      "label": "Modulation"
+                    },
+                    "children": {},
+                    "modulators": [],
+                    "modulations": [],
+                    "triggers": []
+                  }
+                },
+                "deviceVersion": -1
+              },
+              {
+                "id": 54876,
+                "class": "org.projectempire.lx.pattern.ui.pattern.RainbowMeltPattern",
+                "internal": {
+                  "modulationColor": 0,
+                  "expanded": true,
+                  "modulationExpanded": false,
+                  "autoCycleEligible": true
+                },
+                "parameters": {
+                  "label": "RainbowMelt",
+                  "recall": false
+                },
+                "children": {
+                  "modulation": {
+                    "id": 54877,
                     "class": "heronarts.lx.modulation.LXModulationEngine",
                     "internal": {
                       "modulationColor": 0
@@ -6477,7 +6508,7 @@
               "exp": 0.0
             },
             "children": {},
-            "basis": 0.5216000000002754
+            "basis": 0.019300000000370365
           }
         ],
         "modulations": [
