@@ -3,12 +3,10 @@ package org.projectempire.lx.pattern.ui.pattern;
 import heronarts.lx.LX;
 import heronarts.lx.LXCategory;
 import heronarts.lx.pattern.LXPattern;
-import heronarts.lx.utils.LXUtils;
 import org.projectempire.lx.utils.Blaze;
 
 @LXCategory("Blaze")
 public class SlowColorShiftPattern extends LXPattern {
-    private final LXUtils.LookupTable.Sin sin = new LXUtils.LookupTable.Sin(360);
 
     public SlowColorShiftPattern(LX lx) {
         super(lx);
@@ -19,8 +17,8 @@ public class SlowColorShiftPattern extends LXPattern {
         final float t1 = Blaze.time(0.15f) * LX.TWO_PIf;
         final float t2 = Blaze.time(0.1f);
         for (int index = 0; index < model.points.length; index++) {
-            float h = (t2 + 1f + sin.sin(index / 2f + 5f * sin.sin(t1)) / 5f) + index / l4;
-            float v = Blaze.wave((index / 2f + 5f * sin.sin(t1)) / LX.TWO_PIf);
+            float h = (t2 + 1f + Blaze.sin(index / 2f + 5f * Blaze.sin(t1)) / 5f) + index / l4;
+            float v = Blaze.wave((index / 2f + 5f * Blaze.sin(t1)) / LX.TWO_PIf);
             v = (float) Math.pow(v, 4);
             // h in pixel blaze = 0-1
             //   in LX =0-360
