@@ -87,9 +87,13 @@ public class LXStudioApp extends PApplet implements LXPlugin {
     lx.registry.addPattern(org.projectempire.lx.pattern.ui.pattern.FirePattern.class);
     lx.registry.addPattern(org.projectempire.lx.pattern.ui.pattern.NasaPattern.class);
     lx.registry.addPattern(org.projectempire.lx.pattern.ui.pattern.FillPattern.class);
+    // PixelBlaze patterns
     lx.registry.addPattern(org.projectempire.lx.pattern.ui.pattern.RainbowMeltPattern.class);
     lx.registry.addPattern(org.projectempire.lx.pattern.ui.pattern.SlowColorShiftPattern.class);
     lx.registry.addPattern(org.projectempire.lx.pattern.ui.pattern.BlockReflectionsPattern.class);
+    lx.registry.addPattern(org.projectempire.lx.pattern.ui.pattern.SpinCyclePattern.class);
+    lx.registry.addPattern(org.projectempire.lx.pattern.ui.pattern.SparkFirePattern.class);
+    lx.registry.addPattern(org.projectempire.lx.pattern.ui.pattern.EdgeBurstPattern.class);
     lx.registry.addEffect(heronarts.lx.app.effect.AppEffect.class);
     lx.registry.addEffect(BreatheEffect.class);
     lx.registry.addEffect(PulseEffect.class);

@@ -36,6 +36,22 @@ public class Blaze {
      * between 0.0 and 1.0.
      */
     public static float triangle(float v) {
+        v %= 1f;
+        if (v < 0) {
+            v += 1f;
+        }
         return 1f - 2f * Math.abs(0.5f - v);
+    }
+
+    /**
+     * Scale from PixelBlaze h,s,v = 0-1 to LX h = 0-360, s&v = 0-100
+     * <p>
+     * Clamps s and v for us to within 0..1
+     */
+    public static int hsv(float h, float s, float v) {
+        // "It's useful to remember that HSV clamps s and v for us to within 0..1"
+        s = LXUtils.clampf(s, 0, 1);
+        v = LXUtils.clampf(v, 0, 1);
+        return LX.hsb(h * 360f, s * 100f, v * 100f);
     }
 }

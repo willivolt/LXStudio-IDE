@@ -4,7 +4,6 @@ import heronarts.lx.LX;
 import heronarts.lx.LXCategory;
 import heronarts.lx.pattern.LXPattern;
 import org.projectempire.lx.utils.Blaze;
-
 @LXCategory("Blaze")
 public class BlockReflectionsPattern extends LXPattern {
 
