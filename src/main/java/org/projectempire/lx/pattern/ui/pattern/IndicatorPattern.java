@@ -6,6 +6,7 @@ import heronarts.lx.color.ColorParameter;
 import heronarts.lx.color.LXColor;
 import heronarts.lx.model.LXModel;
 import heronarts.lx.pattern.LXPattern;
+import heronarts.lx.utils.LXUtils;
 
 @LXCategory("Empire")
 public class IndicatorPattern extends LXPattern {
@@ -15,6 +16,7 @@ public class IndicatorPattern extends LXPattern {
     public final ColorParameter color3 = new ColorParameter("Color3").setDescription("Color of the pattern");
 
     private double runtime = 0;
+    private boolean firstRun = true;
 
     public IndicatorPattern(LX lx) {
         this(lx, LXColor.RED,
@@ -32,34 +34,52 @@ public class IndicatorPattern extends LXPattern {
         addParameter("color3", this.color3);
     }
 
+    /**
+     * pick one of the 3 colors, weighted towrds the last one.
+     */
+    private int pickColor() {
+        int result = 0;
+        int nextColor = (int) (Math.random() * 7);
+        switch (nextColor) {
+            case 0:
+                result = color1.getColor();
+                break;
+            case 1:
+            case 2:
+                result = color2.getColor();
+                break;
+            default:
+                result = color3.getColor();
+                break;
+        }
+        return result;
+    }
+
+    private void init() {
+        for (LXModel fixture : model.children) {
+            int color = pickColor();
+            for (int i = 0; i < fixture.points.length; i++) {
+                colors[fixture.points[i].index] = color;
+            }
+        }
+
+    }
     @Override
     protected void run(double deltaMs) {
+        if (firstRun) {
+            init();
+            firstRun = false;
+        }
+
         runtime += deltaMs;
         if (runtime >= 5000) {
-            boolean changedSomething = false;
-            runtime = 0;
             // Let's change something every 5 seconds
-            for (LXModel fixture : model.children) {
-                int color = 0;
-                int nextColor = (int) (Math.random() * 7);
-                switch (nextColor) {
-                    case 0:
-                        color = color1.getColor();
-                        break;
-                    case 1:
-                        color = color2.getColor();
-                        break;
-                    case 2:
-                    default:
-                        color = color3.getColor();
-                        break;
-                }
-                for (int i = 0; i < fixture.points.length; i++) {
-                    changedSomething = color != colors[fixture.points[i].index];
-                    colors[fixture.points[i].index] = color;
-                }
-                if (changedSomething) {
-                    break;
+            runtime = 0;
+            for (int i = 0; i < 5; i++) {
+                LXModel fixture = model.children[(int)LXUtils.random(0, model.children.length)];
+                int color = pickColor();
+                for (int index = 0; index < fixture.points.length; index++) {
+                    colors[fixture.points[index].index] = color;
                 }
             }
         }
