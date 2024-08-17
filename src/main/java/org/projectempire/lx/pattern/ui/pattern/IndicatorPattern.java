@@ -36,10 +36,12 @@ public class IndicatorPattern extends LXPattern {
     protected void run(double deltaMs) {
         runtime += deltaMs;
         if (runtime >= 5000) {
+            boolean changedSomething = false;
+            runtime = 0;
             // Let's change something every 5 seconds
             for (LXModel fixture : model.children) {
                 int color = 0;
-                int nextColor = (int) (Math.random() * 3);
+                int nextColor = (int) (Math.random() * 7);
                 switch (nextColor) {
                     case 0:
                         color = color1.getColor();
@@ -53,10 +55,13 @@ public class IndicatorPattern extends LXPattern {
                         break;
                 }
                 for (int i = 0; i < fixture.points.length; i++) {
+                    changedSomething = color != colors[fixture.points[i].index];
                     colors[fixture.points[i].index] = color;
                 }
+                if (changedSomething) {
+                    break;
+                }
             }
-            runtime = 0;
         }
     }
 }
