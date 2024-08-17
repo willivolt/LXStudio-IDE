@@ -1,6 +1,6 @@
 {
   "version": "0.4.0",
-  "timestamp": 1723935150518,
+  "timestamp": 1723937052456,
   "model": {
     "id": 2,
     "class": "heronarts.lx.structure.LXStructure",
@@ -5178,7 +5178,7 @@
           "scene-5": false,
           "crossfader": 0.5,
           "crossfaderBlendMode": 0,
-          "focusedChannel": 10,
+          "focusedChannel": 9,
           "cueA": false,
           "cueB": false,
           "viewCondensed": false
@@ -6189,7 +6189,7 @@
             "parameters": {
               "label": "Engine",
               "arm": false,
-              "selected": false,
+              "selected": true,
               "enabled": true,
               "cue": false,
               "fader": 1.0,
@@ -6228,9 +6228,9 @@
                   "gradientBrightness": 0.0,
                   "colorMode": 0,
                   "blendMode": 0,
-                  "color1/brightness": 100.0,
+                  "color1/brightness": 62.4999885559082,
                   "color1/saturation": 99.16666412353516,
-                  "color1/hue": 93.0,
+                  "color1/hue": 63.0,
                   "color2/brightness": 100.0,
                   "color2/saturation": 100.0,
                   "color2/hue": 0.0,
@@ -6349,7 +6349,7 @@
             "parameters": {
               "label": "Switches",
               "arm": false,
-              "selected": true,
+              "selected": false,
               "enabled": true,
               "cue": false,
               "fader": 1.0,
@@ -6735,7 +6735,7 @@
               "exp": 0.0
             },
             "children": {},
-            "basis": 0.07240000000216021
+            "basis": 0.3861000000037494
           }
         ],
         "modulations": [
@@ -21749,8 +21749,8 @@
                 "type": "PARAMETER",
                 "enabled": true,
                 "parameterPath": "/lx/mixer/channel/10/effect/1/color1/brightness",
-                "value": 100.0,
-                "normalizedValue": 1.0
+                "value": 62.4999885559082,
+                "normalizedValue": 0.624999885559082
               },
               {
                 "scope": "EFFECTS",
@@ -21765,8 +21765,8 @@
                 "type": "PARAMETER",
                 "enabled": true,
                 "parameterPath": "/lx/mixer/channel/10/effect/1/color1/hue",
-                "value": 93.0,
-                "normalizedValue": 0.2590529247910863
+                "value": 63.0,
+                "normalizedValue": 0.17548746518105848
               },
               {
                 "scope": "EFFECTS",
@@ -21869,8 +21869,8 @@
                 "type": "PARAMETER",
                 "enabled": true,
                 "parameterPath": "/lx/mixer/channel/10/effect/1/color1/brightness",
-                "value": 100.0,
-                "normalizedValue": 1.0
+                "value": 62.4999885559082,
+                "normalizedValue": 0.624999885559082
               },
               {
                 "scope": "EFFECTS",
@@ -21885,8 +21885,8 @@
                 "type": "PARAMETER",
                 "enabled": true,
                 "parameterPath": "/lx/mixer/channel/10/effect/1/color1/hue",
-                "value": 93.0,
-                "normalizedValue": 0.2590529247910863
+                "value": 63.0,
+                "normalizedValue": 0.17548746518105848
               },
               {
                 "scope": "EFFECTS",
@@ -24350,6 +24350,14 @@
                 "type": "PARAMETER",
                 "enabled": true,
                 "parameterPath": "/lx/mixer/channel/10/effect/1/color1/brightness",
+                "value": 56.666656494140625,
+                "normalizedValue": 0.5666665649414062
+              },
+              {
+                "scope": "EFFECTS",
+                "type": "PARAMETER",
+                "enabled": true,
+                "parameterPath": "/lx/mixer/channel/10/effect/1/color1/saturation",
                 "value": 100.0,
                 "normalizedValue": 1.0
               },
@@ -24357,17 +24365,9 @@
                 "scope": "EFFECTS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/10/effect/1/color1/saturation",
-                "value": 99.16666412353516,
-                "normalizedValue": 0.9916666412353515
-              },
-              {
-                "scope": "EFFECTS",
-                "type": "PARAMETER",
-                "enabled": true,
                 "parameterPath": "/lx/mixer/channel/10/effect/1/color1/hue",
-                "value": 93.0,
-                "normalizedValue": 0.2590529247910863
+                "value": 57.0,
+                "normalizedValue": 0.15877437325905291
               },
               {
                 "scope": "EFFECTS",
@@ -24470,6 +24470,14 @@
                 "type": "PARAMETER",
                 "enabled": true,
                 "parameterPath": "/lx/mixer/channel/10/effect/1/color1/brightness",
+                "value": 56.666656494140625,
+                "normalizedValue": 0.5666665649414062
+              },
+              {
+                "scope": "EFFECTS",
+                "type": "PARAMETER",
+                "enabled": true,
+                "parameterPath": "/lx/mixer/channel/10/effect/1/color1/saturation",
                 "value": 100.0,
                 "normalizedValue": 1.0
               },
@@ -24477,17 +24485,9 @@
                 "scope": "EFFECTS",
                 "type": "PARAMETER",
                 "enabled": true,
-                "parameterPath": "/lx/mixer/channel/10/effect/1/color1/saturation",
-                "value": 99.16666412353516,
-                "normalizedValue": 0.9916666412353515
-              },
-              {
-                "scope": "EFFECTS",
-                "type": "PARAMETER",
-                "enabled": true,
                 "parameterPath": "/lx/mixer/channel/10/effect/1/color1/hue",
-                "value": 93.0,
-                "normalizedValue": 0.2590529247910863
+                "value": 57.0,
+                "normalizedValue": 0.15877437325905291
               },
               {
                 "scope": "EFFECTS",
@@ -26836,8 +26836,8 @@
         "camera": {
           "active": false,
           "radius": 283.9482873868086,
-          "theta": 125.90987855941057,
-          "phi": 0.0030799047090113163,
+          "theta": 126.17475796723738,
+          "phi": 0.058519777841866016,
           "x": -40.89491356164217,
           "y": 3.4329900071024895,
           "z": 194.95295452699065
@@ -26846,8 +26846,8 @@
           {
             "active": false,
             "radius": 283.9482873868086,
-            "theta": 125.90987855941057,
-            "phi": 0.0030799047090113163,
+            "theta": 126.17475796723738,
+            "phi": 0.058519777841866016,
             "x": -40.89491356164217,
             "y": 3.4329900071024895,
             "z": 194.95295452699065
